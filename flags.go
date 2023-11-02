@@ -57,6 +57,7 @@ func parseFlags(args []string) (cmd Command, arguments []string) {
 	}
 
 	optionsSet().Parse(options)
+	optionsSet().SortFlags = false
 
 	if len(arguments) == 0 {
 		arguments = append(arguments, "")
