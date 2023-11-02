@@ -84,7 +84,7 @@ var commands = []Command{
 	{
 		Str:  "compose",
 		Desc: "Compose a new message.",
-		Usage: "[options]\n" +
+		Usage: "[options] [recipients]\n" +
 			"\tIf no options are passed, composes interactively.\n" +
 			"\tIf options are passed, reads message from stdin similar to mail(1).",
 		Options: map[string]string{
@@ -93,7 +93,7 @@ var commands = []Command{
 			"--attachment , -a": "Attachment path (may be repeated)",
 			"--cc, -c":          "CC Address(es) (may be repeated)",
 			"--p2p-only":        "Send over peer to peer links only (avoid CMS)",
-			"":                  "Recipient address (may be repeated)",
+			"recipients":        "Recipient address(es) (may be repeated)",
 		},
 		HandleFunc: composeMessage,
 	},
